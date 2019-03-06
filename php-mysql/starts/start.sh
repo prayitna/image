@@ -18,7 +18,11 @@
    fi
 
 # Server
-   echo "** Starting webserver"
+   echo "** Starting webserver"    
+   if  [ !-d $ENV_WORKDIR ]; then
+           mkdir $ENV_WORKDIR -p
+           chown nginx:www_data $ENV_WORKDIR
+   fi
    php-fpm7
    nginx -g 'daemon off;'
 
