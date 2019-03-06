@@ -1,0 +1,13 @@
+version: '2'
+services:
+  zabbix:
+    image: zabbix/zabbix-appliance:alpine-latest    
+    container_name: zabbix
+    environment:
+       PHP_TZ : 'Asia/Jakarta'
+       ZBX_MAXEXECUTIONTIME : 300
+       ZBX_MEMORYLIMIT : 128M
+    mem_limit: 512m
+    ports: 
+      - 80
+      - 10051

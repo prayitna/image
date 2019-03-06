@@ -1,0 +1,19 @@
+version: '2'
+services:
+  utils:
+    image: kusprayitna/utils:latest
+    container_name: utils
+    environment:
+       ENV_GRAYLOG: rsyslog:514
+    ulimits:
+       memlock:
+          soft: -1
+          hard: -1
+    mem_limit: 128m
+    networks:
+      - logger-net
+
+networks:   
+  logger-net:
+      driver: bridge
+      

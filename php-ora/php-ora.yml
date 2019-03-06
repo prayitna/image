@@ -1,0 +1,18 @@
+version: '2'
+services:
+  php:
+    image: kusprayitna/php-ora:7.1
+    container_name: php-ora
+    environment:
+        ENV_WORKDIR : /home/www
+        ENV_LOGSERVER : rsyslog:514
+    volumes:
+            - ~/data/www:/home/www
+    ulimits:
+       memlock:
+          soft: -1
+          hard: -1
+    mem_limit: 128m
+    ports:
+       - 80:80 
+

@@ -1,0 +1,3 @@
+FROM	zabbix/zabbix-server-mysql:alpine-latest
+
+RUN	apk update && apk upgrade && apk add php5 php5-mysqli

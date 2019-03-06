@@ -1,0 +1,15 @@
+FROM kusprayitna/base:alpine
+
+
+RUN 	apk add iputils nmap bind-tools rsyslog --no-cache \
+	&& rm /var/cache/apk/* -f 
+
+
+ENV 	LOG_SERVER='none'
+ENV	ZBX_TYPE='none'
+
+COPY	starts /etc
+
+
+ENTRYPOINT ["sh","/etc/start.sh","sh"]
+

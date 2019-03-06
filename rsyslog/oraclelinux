@@ -1,0 +1,12 @@
+FROM	oraclelinux:latest
+
+COPY	settings-ora /etc
+COPY 	starts   /etc
+
+ENV     LOG_SERVER='127.0.0.1'
+ENV     LOG_START='false'
+ENV     ZBX_TYPE='none'
+
+EXPOSE	514 514/udp
+
+ENTRYPOINT ["sh","/etc/start.sh"]

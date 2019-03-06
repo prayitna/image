@@ -1,0 +1,21 @@
+FROM	oraclelinux:latest
+COPY	sources /tmp
+RUN 	rpm -Uvh /tmp/*.rpm && rm /tmp/* -f
+
+ENV	ZBX_LOGTYPE='system'
+ENV	ZBX_HOSTNAME='Zabbix server'
+ENV	ZBX_SERVER_HOST='127.0.0.1'
+ENV  	ZBX_DB_TYPE='none'
+ENV	ZBX_OPT_TYPE='none'
+ENV	ZBX_SOURCES='svn://svn.zabbix.com/tags/4.0.5/'
+ENV	ZBX_TYPE='agent'
+ENV	ZBX_VERSION='4.0.5'
+ENV     LOG_START='true'
+ENV     LOG_SERVER='127.0.0.1'
+ENV     LOG_FILE='/var/log/messages'
+
+
+WORKDIR /
+
+COPY	starts-ora /usr/bin
+ENTRYPOINT 	["sh","/usr/bin/start-base.sh","sh"]

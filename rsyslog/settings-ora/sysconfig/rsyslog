@@ -1,0 +1,11 @@
+# Options for rsyslogd
+# Syslogd options are deprecated since rsyslog v3.
+# If you want to use them, switch to compatibility mode 2 by "-c 2"
+# See rsyslogd(8) for more details
+SYSLOGD_OPTIONS="-c3"
+# Options to klogd
+# -2 prints all kernel oops messages twice; once for klogd to decode, and
+#    once for processing with 'ksymoops'
+# -x disables all klogd processing of oops messages entirely
+# See klogd(8) for more details
+KLOGD_OPTIONS="-x"

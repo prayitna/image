@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mysql1:
+    image: kusprayitna/mysql:latest
+    environment:
+            LOG_SERVER: '127.0.0.1'
+            LOG_START: 'false'
+            ZBX_TYPE: 'none'
+            ZBX_HOSTNAME: 'mysql'
+            ZBX_SERVER_HOST: 'zabbix'
+            ZBX_STARTAGENTS: '1'
+    container_name: mysql1
+    volumes: 
+       - ~/data/mysql:/var/lib/mysql
+    ulimits:
+       memlock:
+          soft: -1
+          hard: -1
+    mem_limit: 128m
+    ports: 
+       - 3306:3306
