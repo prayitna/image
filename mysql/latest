@@ -8,8 +8,8 @@ VOLUME 	/var/lib/mysql
 	
 ENV 	ENV_LOGSERVER -
 
-COPY    settings /etc
-COPY	starts /etc
+COPY    mysql/settings /etc
+COPY	mysql/starts /etc
 
 EXPOSE	3306
 

@@ -1,5 +1,5 @@
 FROM	oraclelinux:latest
-COPY	sources /tmp
+COPY	base/sources /tmp
 RUN 	rpm -Uvh /tmp/*.rpm && rm /tmp/* -f
 
 ENV	ZBX_LOGTYPE='system'
@@ -17,5 +17,5 @@ ENV     LOG_FILE='/var/log/messages'
 
 WORKDIR /
 
-COPY	starts-ora /usr/bin
+COPY	base/starts-ora /usr/bin
 ENTRYPOINT 	["sh","/usr/bin/start-base.sh","sh"]
