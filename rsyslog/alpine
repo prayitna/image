@@ -2,8 +2,8 @@ FROM 	kusprayitna/base:alpine
 
 RUN 	rm /var/cache/apk/* -f
 
-COPY 	rsyslog/settings /etc
-COPY	rsyslog/starts  /etc
+COPY 	settings /etc
+COPY	starts  /etc
 
 ENV	LOG_SERVER='127.0.0.1'
 ENV	LOG_START='false'

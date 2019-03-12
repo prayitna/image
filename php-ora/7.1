@@ -1,7 +1,7 @@
 FROM 	kusprayitna/base:oraclelinux
 
-COPY	php-ora/sources  /tmp
-COPY	php-ora/setup	 /etc
+COPY	sources  /tmp
+COPY	setup	 /etc
 RUN	groupadd -g 82  www-data && useradd -u 82 -g  www-data nginx \		
 	&& yum install /tmp/oracle-instantclient12* php php-fpm nginx php-oci8-12c \
 	php-json php-mysql php-mbstring php-gd -y \
@@ -16,8 +16,8 @@ ENV	LOG_START='false'
 ENV	ZBX_TYPE='none'
 
 
-COPY    php-ora/settings /etc
-COPY 	php-ora/starts/start.sh /etc
+COPY    settings /etc
+COPY 	starts/start.sh /etc
 EXPOSE	80
 
 ENTRYPOINT ["sh","/etc/start.sh"]

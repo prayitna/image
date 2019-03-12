@@ -3,6 +3,7 @@ services:
   mysql1:
     image: kusprayitna/mysql:latest
     environment:
+            MYSQL_ROOT_PASSWORD: 'bismillah'
             LOG_SERVER: '127.0.0.1'
             LOG_START: 'false'
             ZBX_TYPE: 'none'

@@ -9,6 +9,6 @@ ENV	LOG_FILE='/var/log/messages'
 
 WORKDIR /
 
-COPY	base/starts-alpine /usr/bin/
+COPY	starts-alpine /usr/bin/
 
 ENTRYPOINT	["sh","/usr/bin/start-base.sh","sh"]

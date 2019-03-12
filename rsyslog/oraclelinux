@@ -1,7 +1,7 @@
 FROM	oraclelinux:latest
 
-COPY	rsyslog/settings-ora /etc
-COPY 	rsyslog/starts   /etc
+COPY	settings-ora /etc
+COPY 	starts   /etc
 
 ENV     LOG_SERVER='127.0.0.1'
 ENV     LOG_START='false'

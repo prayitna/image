@@ -7,9 +7,10 @@ RUN	apk add mysql mysql-client rsyslog --no-cache \
 VOLUME 	/var/lib/mysql
 	
 ENV 	ENV_LOGSERVER -
+ENV 	MYSQL_ROOT_PASSWORD -
 
-COPY    mysql/settings /etc
-COPY	mysql/starts /etc
+COPY    settings /etc
+COPY	starts /etc
 
 EXPOSE	3306
 
